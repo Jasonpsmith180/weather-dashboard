@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark justify-content-center">
+        <span class="navbar-text h1 text-white">Weather Dashboard</span>
+    </nav>
+    
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 bg-light p-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="text-left font-weight-bold h5">Search for a City:</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control">
+                                <div class="input-group-append">
+                                    <button class="input-group-text bg-primary text-white"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Search History Card -->
+                    <div class="mt-2">
+                        <div class="ml-1">
+                            Search History:
+                        </div>
+                        <div class="card">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                                <li class="list-group-item">I'm Mr Meeseeks!</li>
+                                <li class="list-group-item">Look at me!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Weather Card -->
+                <div class="col-md-9 pt-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="pb-2">Current City</h3>
+                            <p class="card-text">Temperature:</p>
+                            <p class="card-text">Humidity:</p>
+                            <p class="card-text">Wind Speed:</p>
+                            <p class="card-text">UV Index:</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="mt-2">5 Day Forecast</h3>
+                    </div>
+
+                    <div class="card-deck">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <p class="card-text">Weather Icon</p>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Humidity:</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <p class="card-text">Weather Icon</p>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Humidity:</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <p class="card-text">Weather Icon</p>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Humidity:</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <p class="card-text">Weather Icon</p>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Humidity:</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <p class="card-text">Weather Icon</p>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Humidity:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
