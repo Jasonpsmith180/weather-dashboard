@@ -7,6 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
 
@@ -24,9 +25,9 @@
                         <div class="card-body">
                             <p class="text-left font-weight-bold h5">Search for a City:</p>
                             <div class="input-group">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="city-input">
                                 <div class="input-group-append">
-                                    <button class="input-group-text bg-primary text-white"><i class="fas fa-search"></i></button>
+                                    <button class="input-group-text bg-primary text-white" id="search-btn"><i class="fas fa-search"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -53,68 +54,33 @@
                 <div class="col-md-9 pt-3">
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="pb-2">Current City</h3>
-                            <p class="card-text">Temperature:</p>
-                            <p class="card-text">Humidity:</p>
-                            <p class="card-text">Wind Speed:</p>
-                            <p class="card-text">UV Index:</p>
+                            <h3 class="mb-1" id="city-name">Current City<span id="date"></span></h3>
+                            <div class="hide" id="icon">
+                                <img id="wicon" src="" alt="Weather Icon">
+                            </div>
+                            <p><span id="icon-description"></span></p>
+                            <p class="card-text">Temperature: <span id="city-temp"></span>F</p>
+                            <p class="card-text">Humidity: <span id="city-hum"></span>%</p>
+                            <p class="card-text">Wind Speed: <span id="city-wind"></span>MPH</p>
+                            <p class="card-text">UV Index: <span id="city-uv"></span></p>
                         </div>
                     </div>
 
                     <div>
-                        <h3 class="mt-2">5 Day Forecast</h3>
+                        <h3 class="mt-2">5 Day Forecast:</h3>
                     </div>
 
                     <div class="card-deck">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Date</h5>
-                                <p class="card-text">Weather Icon</p>
-                                <p class="card-text">Temp:</p>
-                                <p class="card-text">Humidity:</p>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Date</h5>
-                                <p class="card-text">Weather Icon</p>
-                                <p class="card-text">Temp:</p>
-                                <p class="card-text">Humidity:</p>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Date</h5>
-                                <p class="card-text">Weather Icon</p>
-                                <p class="card-text">Temp:</p>
-                                <p class="card-text">Humidity:</p>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Date</h5>
-                                <p class="card-text">Weather Icon</p>
-                                <p class="card-text">Temp:</p>
-                                <p class="card-text">Humidity:</p>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Date</h5>
-                                <p class="card-text">Weather Icon</p>
-                                <p class="card-text">Temp:</p>
-                                <p class="card-text">Humidity:</p>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
     
 </body>
 </html>

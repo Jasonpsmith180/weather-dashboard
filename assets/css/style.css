@@ -1,0 +1,12 @@
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#wicon {
+    height: 75px;
+    width: 75px;
+}
