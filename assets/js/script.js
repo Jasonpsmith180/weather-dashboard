@@ -1,11 +1,7 @@
-var APIkey = "API Key Here"
+var APIkey = "58a683e0548276633c526a688d1e5de6"
+var searchHistory = [];
 
 function getWeather(city) {
-
-    var city = $("#city-input")
-    .val()
-    .trim()
-    .toLowerCase();
 
     // Fetch function to call current weather for the city from the api
     fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIkey)
@@ -18,7 +14,7 @@ function getWeather(city) {
         // Replaces Current City text with city name
         var cityName = $("#city-name").text(search.name);
         $("#city-name").append(cityName, " ", moment().format("MM/DD/YYYY"));
-
+        
         // Gets weather icon
         var iconCode = search.weather[0].icon;
         var iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
@@ -53,6 +49,16 @@ function getWeather(city) {
             var cityUV = $("#city-uv").text(uvindex.value);
             $("#city-uv").append(cityUV);
         })
+
+        // Store city name into search history array
+        // searchHistory.push(search.name);
+        // append the city to the search history card stack
+        $(".list-group").prepend(
+            `<li class="list-group-item">${search.name}</li>`
+        )
+        
+        // Clear city input value
+        $("#city-input").val("");
     })
 
     // Fetch function to call 5-day forecast for the city from the api
@@ -66,9 +72,8 @@ function getWeather(city) {
             // clear any old forecast data
             $(".card-deck").text("")
 
-            // Loop through 5 day forecast and create cards for each day
+            // Loop through 5 day forecast for 12:00pm each day and create cards for each day
             for (var i = 4; i < 40; i += 8) {
-                // console.log(forecast.list[i]);
 
                 var iconCode = forecast.list[i].weather[0].icon;
                 var iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
@@ -85,8 +90,18 @@ function getWeather(city) {
                 );
             }
         });
-}
+};
 
 $("#search-btn").on("click", function() {
-    getWeather();
+    var city = $("#city-input")
+    .val()
+    .trim()
+    .toLowerCase();
+    getWeather(city);
+});
+
+
+$(document).on("click", "li.list-group-item", function() {
+    getWeather(this.textContent);
 })
+    
