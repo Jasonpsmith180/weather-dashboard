@@ -1,4 +1,18 @@
-var APIkey = "API Key Here"
+var APIkey = "58a683e0548276633c526a688d1e5de6"
+var searchHistory = [];
+
+// Prepare the document and retrieve cities in local storage
+$(document).ready(function() {
+    var storedHistory = JSON.parse(localStorage.getItem("searchHistory"));
+    if (storedHistory){
+        for (var i = 0; i < storedHistory.length; i++) {
+            $(".list-group").prepend(
+                `<li class="list-group-item">${storedHistory[i]}</li>`
+            )
+            searchHistory.push(storedHistory[i]);
+        }
+    }
+})
 
 function getWeather(city) {
 
@@ -63,6 +77,10 @@ function getWeather(city) {
                     `<li class="list-group-item">${search.name}</li>`
                 )
                 
+                // push city to city to search history
+                searchHistory.push(search.name);
+                localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
+                
                 // Clear city input value
                 $("#city-input").val("");
             })
@@ -115,4 +133,9 @@ $("#search-btn").on("click", function() {
 $(document).on("click", "li.list-group-item", function() {
     $("#city-uv").removeClass();
     getWeather(this.textContent);
+})
+
+$("#clear-history-btn").on("click", function() {
+    localStorage.clear();
+    location.reload();
 })
