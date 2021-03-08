@@ -1,4 +1,4 @@
-var APIkey = "58a683e0548276633c526a688d1e5de6"
+var APIkey = "API Key Here"
 var searchHistory = [];
 
 function getWeather(city) {
