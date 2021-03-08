@@ -10,3 +10,22 @@
     height: 75px;
     width: 75px;
 }
+
+#city-uv {
+    border-radius: 10%;
+    padding: 2px
+}
+
+.low {
+    background-color: green;
+    color: white;
+}
+
+.moderate {
+    background-color: yellow;
+}
+
+.severe {
+    background-color: red;
+    color: white;
+}

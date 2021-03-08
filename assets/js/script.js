@@ -48,11 +48,18 @@ function getWeather(city) {
         .then(function(uvindex) {
             var cityUV = $("#city-uv").text(uvindex.value);
             $("#city-uv").append(cityUV);
+            if (uvindex.value > 8) {
+                $("#city-uv").addClass("severe");
+            }
+            else if (uvindex.value < 8 && uvindex.value > 3) {
+                $("#city-uv").addClass("moderate");
+            }
+            else {
+                $("#city-uv").addClass("low");
+            }
         })
 
-        // Store city name into search history array
-        // searchHistory.push(search.name);
-        // append the city to the search history card stack
+        // prepend the city to the search history card stack
         $(".list-group").prepend(
             `<li class="list-group-item">${search.name}</li>`
         )
@@ -97,11 +104,13 @@ $("#search-btn").on("click", function() {
     .val()
     .trim()
     .toLowerCase();
+    $("#city-uv").removeClass();
     getWeather(city);
 });
 
 
 $(document).on("click", "li.list-group-item", function() {
+    $("#city-uv").removeClass();
     getWeather(this.textContent);
 })
     
