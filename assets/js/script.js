@@ -1,5 +1,4 @@
 var APIkey = "API Key Here"
-var searchHistory = [];
 
 function getWeather(city) {
 
@@ -99,7 +98,7 @@ function getWeather(city) {
                 });
 
         } else {
-            alert("Error: " + response.status + " City " + response.statusText);
+            alert("Error: " + response.status + " " + response.statusText);
         }
     })
 };
